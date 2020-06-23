@@ -1,8 +1,8 @@
-// variables
-@import "_variables";
-
 // bootstrap
 @import "~bootstrap/scss/bootstrap";
+
+// variables
+@import "_variables";
 
 // override sweetalert 2 styles with bootstraps
 $success: theme-color("primary");

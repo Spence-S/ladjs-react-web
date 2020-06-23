@@ -1,9 +1,12 @@
 {
-  "name": "react-admin",
+  "name": "web-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.29",
+    "@fortawesome/free-solid-svg-icons": "^5.13.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "@ladjs/assets": "^0.0.23",
     "@primer/css": "^14.4.0",
     "@testing-library/jest-dom": "^4.2.4",
@@ -11,6 +14,7 @@
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.5.0",
     "formik": "^2.1.4",
+    "gemoji": "^5.0.1",
     "github-markdown-css": "^4.0.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -19,7 +23,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "recoil": "^0.0.10",
-    "sweetalert2": "^9.15.1"
+    "sweetalert2": "^9.15.1",
+    "titleize": "^2.1.0"
   },
   "scripts": {
     "start": "PORT=4000 react-scripts start",
@@ -41,5 +46,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "jsxSingleQuote": true
   }
 }

@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "../css/app.scss";
-import App from "./App";
-import { BrowserRouter as Router } from "react-router-dom";
-import { RecoilRoot } from "recoil";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import '../css/app.scss';
+import App from './App';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 
 ReactDOM.render(
   <RecoilRoot>
@@ -11,5 +11,5 @@ ReactDOM.render(
       <App />
     </Router>
   </RecoilRoot>,
-  document.getElementById("root")
+  document.getElementById('root')
 );
