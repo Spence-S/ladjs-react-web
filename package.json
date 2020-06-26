@@ -2,7 +2,26 @@
   "name": "ladjs-react-web",
   "description": "ladjs web services port for React",
   "version": "0.1.0",
-  "license": "MIT",
+  "browserslist": {
+    "production": [
+      "extends @ladjs/browserslist-config"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "contributors": [
+    "Nick Baugh <niftylettuce@gmail.com> (http://niftylettuce.com/)",
+    "Shaun Warman <shaunwarman1@gmail.com> (https://shaunwarman.com/)",
+    "Spencer Snyder <sasnyde2@gmail.com> (https://spencersnyder.io/)"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
@@ -27,47 +46,42 @@
     "titleize": "^2.1.0"
   },
   "devDependencies": {
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@ladjs/browserslist-config": "^0.0.1",
-    "node-sass": "^4.14.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2"
-  },
-  "scripts": {
-    "start": "PORT=4000 react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+    "@testing-library/user-event": "^7.1.2",
+    "fixpack": "^3.0.6",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "node-sass": "^4.14.1"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": {
-    "production": [
-      "extends @ladjs/browserslist-config"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
+  "keywords": [
+    "lad",
+    "lass",
+    "react"
+  ],
+  "license": "MIT",
   "prettier": {
     "singleQuote": true,
-    "jsxSingleQuote": true
+    "jsxSingleQuote": true,
+    "bracketSpacing": true,
+    "trailingComma": "none"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "start": "PORT=4000 react-scripts start",
+    "test": "react-scripts test"
   }
 }
