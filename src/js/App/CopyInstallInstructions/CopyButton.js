@@ -5,7 +5,7 @@ import { faClipboard } from '@fortawesome/free-solid-svg-icons';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Tooltip from 'react-bootstrap/Tooltip';
 import Overlay from 'react-bootstrap/Overlay';
-const copyText = 'npm install lad -g';
+const copyText = 'npm install -g lad';
 
 export default function CopyButton(props) {
   const target = useRef(null);

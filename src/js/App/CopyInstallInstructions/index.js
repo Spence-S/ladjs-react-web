@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTerminal } from '@fortawesome/free-solid-svg-icons';
 import CopyButton from './CopyButton';
 
-const copyText = 'npm install lad -g';
+const copyText = 'npm install -g lad';
 
 export default function CopyInstallInstructions() {
   return (
