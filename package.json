@@ -2,7 +2,7 @@
   "name": "ladjs-react-web",
   "description": "ladjs web services port for React",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
@@ -10,16 +10,11 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@ladjs/assets": "^0.0.23",
-    "@ladjs/browserslist-config": "^0.0.1",
     "@primer/css": "^14.4.0",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.5.0",
     "formik": "^2.1.4",
     "gemoji": "^5.0.1",
     "github-markdown-css": "^4.0.0",
-    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-copy-to-clipboard": "^5.0.2",
@@ -31,11 +26,32 @@
     "sweetalert2": "^9.15.1",
     "titleize": "^2.1.0"
   },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@ladjs/browserslist-config": "^0.0.1",
+    "node-sass": "^4.14.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2"
+  },
   "scripts": {
     "start": "PORT=4000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
