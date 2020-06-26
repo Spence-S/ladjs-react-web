@@ -11,5 +11,5 @@ ReactDOM.render(
       <App />
     </Router>
   </RecoilRoot>,
-  document.getElementById('root')
+  document.querySelector('#root')
 );

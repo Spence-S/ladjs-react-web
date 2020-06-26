@@ -2,6 +2,7 @@
   "name": "ladjs-react-web",
   "description": "ladjs web services port for React",
   "version": "0.1.0",
+  "author": "Spencer Snyder <sasnyde2@gmail.com> (https://spencersnyder.io/)",
   "browserslist": {
     "production": [
       "extends @ladjs/browserslist-config"
@@ -12,6 +13,7 @@
       "last 1 safari version"
     ]
   },
+  "bugs": "https://github.com/ladjs/react-web/issues",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -78,6 +80,7 @@
     "bracketSpacing": true,
     "trailingComma": "none"
   },
+  "repository": "https://github.com/ladjs/react-web",
   "scripts": {
     "build": "react-scripts build",
     "eject": "react-scripts eject",
