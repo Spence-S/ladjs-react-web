@@ -1,37 +1,18 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Navbar from 'react-bootstrap/Navbar';
 import Image from 'react-bootstrap/Image';
 import SignInModal from './SignInModal';
 import logo from '../../../img/logo-square.svg';
+import { useRecoilState } from 'recoil';
+import { signInModalState } from '../recoil/atoms';
 
-function reducer(state, action) {
-  switch (action.type) {
-    case 'signup':
-      return { show: true, isSignIn: true };
-    case 'createAccount':
-      return { show: true, isSignIn: false };
-    case 'close':
-      return { show: false, isSignIn: state.isSignIn };
-    case 'toggle':
-      return { show: true, isSignIn: !state.isSignIn };
-    default:
-      throw new Error();
-  }
-}
-// TODO: need to do some heavy lifting
-// to get the navigation to flip as it does in
-// lad currently as the screen gets smaller
 export default function Navigation() {
-  const [state, dispatch] = useReducer(reducer, {
-    show: false,
-    isSignIn: true,
-  });
-
-  const handleCreateAccount = () => dispatch({ type: 'createAccount' });
-  const handleSignIn = () => dispatch({ type: 'signup' });
-  const handleClose = () => dispatch({ type: 'close' });
-  const toggleSignIn = () => dispatch({ type: 'toggle' });
+  const [state, setState] = useRecoilState(signInModalState);
+  const handleCreateAccount = () => setState({ show: true, isSignIn: false });
+  const handleSignIn = () => setState({ show: true, isSignIn: true });
+  const handleClose = () => setState({ ...state, show: false });
+  const toggleSignIn = () => setState({ ...state, isSignIn: !state.isSignIn });
 
   return (
     <>

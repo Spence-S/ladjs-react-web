@@ -4,16 +4,18 @@ import CopyInstallInstructions from './CopyInstallInstructions';
 import Jumbotron from './Jumbotron';
 import Features from './Features';
 import Footer from './Footer';
+import Spinner from './Spinner';
 
 function App() {
   return (
-    <div>
+    <>
+      <Spinner />
       <Nav></Nav>
       <Jumbotron></Jumbotron>
       <CopyInstallInstructions></CopyInstallInstructions>
       <Features></Features>
       <Footer></Footer>
-    </div>
+    </>
   );
 }
 

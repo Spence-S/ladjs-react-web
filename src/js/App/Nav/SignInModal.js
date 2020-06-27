@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -6,6 +6,15 @@ import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
 import toEmoji from 'gemoji/name-to-emoji';
+import { useRecoilState, RecoilRoot } from 'recoil';
+import { spinnerState } from '../recoil/atoms';
+
+const fakeSignIn = () =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('DONE!');
+    }, 5000);
+  });
 
 export default function SignInModal({
   show,
@@ -13,9 +22,19 @@ export default function SignInModal({
   handleClose,
   showSignIn,
   showCreateAccount,
-  toggleSignIn,
+  toggleSignIn
 }) {
   const verb = isSignIn ? 'Sign In' : 'Sign Up';
+
+  const [spin, setSpin] = useRecoilState(spinnerState);
+
+  async function handleSignIn() {
+    setSpin(true);
+    const token = await fakeSignIn();
+    console.log(token);
+    setSpin(false);
+  }
+
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header className='text-center d-block' closeButton>
@@ -73,7 +92,7 @@ export default function SignInModal({
               </Form.Group>
             ) : null}
           </Form>
-          <Button variant='success' size='lg' block>
+          <Button variant='success' size='lg' block onClick={handleSignIn}>
             {verb}
           </Button>
           <Alert

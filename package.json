@@ -43,8 +43,10 @@
     "react-i18next": "^11.7.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-spinkit": "^3.0.0",
     "recoil": "^0.0.10",
     "sweetalert2": "^9.15.1",
+    "sweetalert2-react-content": "^3.0.1",
     "titleize": "^2.1.0"
   },
   "devDependencies": {
@@ -80,11 +82,12 @@
     "bracketSpacing": true,
     "trailingComma": "none"
   },
+  "proxy": "http://localhost:4000",
   "repository": "https://github.com/ladjs/react-web",
   "scripts": {
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "start": "PORT=4000 react-scripts start",
+    "start": "PORT=3500 react-scripts start",
     "test": "react-scripts test"
   }
 }

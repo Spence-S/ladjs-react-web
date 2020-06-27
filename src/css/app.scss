@@ -1,6 +1,9 @@
 // variables
 @import '_variables';
 
+// spinkit loading spinner
+@import '~@ladjs/assets/scss/spinner';
+
 // bootstrap fixes and add-ons
 @import '~@ladjs/assets/scss/bootstrap';
 
@@ -35,9 +38,6 @@ $question: theme-color('light');
   font-weight: 900;
 }
 @import '~@fortawesome/fontawesome-free/scss/v4-shims';
-
-// spinkit loading spinner
-@import '~@ladjs/assets/scss/spinner';
 
 // support custom file inputs
 @import '~@ladjs/assets/scss/custom-file-input';
