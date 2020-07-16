@@ -2,7 +2,7 @@ import React from 'react';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Button from 'react-bootstrap/Button';
 import { useSetRecoilState } from 'recoil';
-import { signInModalState } from '../recoil/atoms';
+import { signInModalState } from '../../recoil/atoms';
 
 export default function LadJumbotron() {
   const setState = useSetRecoilState(signInModalState);

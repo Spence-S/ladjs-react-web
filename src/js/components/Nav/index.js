@@ -5,7 +5,7 @@ import Image from 'react-bootstrap/Image';
 import SignInModal from './SignInModal';
 import logo from '../../../img/logo-square.svg';
 import { useRecoilState } from 'recoil';
-import { signInModalState } from '../recoil/atoms';
+import { signInModalState } from '../../recoil/atoms';
 
 export default function Navigation() {
   const [state, setState] = useRecoilState(signInModalState);

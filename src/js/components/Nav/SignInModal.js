@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -6,14 +6,14 @@ import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
 import toEmoji from 'gemoji/name-to-emoji';
-import { useRecoilState, RecoilRoot } from 'recoil';
-import { spinnerState } from '../recoil/atoms';
+import { useSetRecoilState } from 'recoil';
+import { spinnerState } from '../../recoil/atoms';
 
 const fakeSignIn = () =>
   new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('DONE!');
-    }, 5000);
+    }, 1000);
   });
 
 export default function SignInModal({
@@ -26,7 +26,7 @@ export default function SignInModal({
 }) {
   const verb = isSignIn ? 'Sign In' : 'Sign Up';
 
-  const [spin, setSpin] = useRecoilState(spinnerState);
+  const setSpin = useSetRecoilState(spinnerState);
 
   async function handleSignIn() {
     setSpin(true);

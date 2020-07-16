@@ -1,7 +1,7 @@
 import React from 'react';
 import Spinner from 'react-spinkit';
 import { useRecoilValue } from 'recoil';
-import { spinnerState } from '../recoil/atoms';
+import { spinnerState } from '../../recoil/atoms';
 
 // spinner styles in @ladjs/assets
 export default function SpinnerComponent() {
