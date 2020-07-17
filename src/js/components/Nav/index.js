@@ -30,7 +30,7 @@ export default function Navigation() {
         fixed='top'
         className='d-flex space-between'
       >
-        <Navbar.Brand href='#home'>
+        <Navbar.Brand href='/'>
           <Image src={logo} width={50} height={50}></Image>
           <h1 className='h2 d-inline-block align-middle m-0'>Lad</h1>
         </Navbar.Brand>

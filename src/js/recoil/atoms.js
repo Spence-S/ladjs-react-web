@@ -12,3 +12,8 @@ export const spinnerState = atom({
   key: 'spinnerState',
   default: false
 });
+
+export const localeState = atom({
+  key: 'localeState',
+  default: 'en'
+});

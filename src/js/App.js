@@ -1,15 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../css/app.scss';
-import App from './Home';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
+import '../css/app.scss';
+import Routes from './Routes';
+import Layout from './Layout';
 
-ReactDOM.render(
-  <RecoilRoot>
-    <Router>
-      <App />
-    </Router>
-  </RecoilRoot>,
-  document.querySelector('#root')
-);
+function App() {
+  return (
+    <RecoilRoot>
+      <Router>
+        <Layout>
+          <Routes />
+        </Layout>
+      </Router>
+    </RecoilRoot>
+  );
+}
+
+ReactDOM.render(<App />, document.querySelector('#root'));
