@@ -1,21 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+// providers
 import { BrowserRouter as Router } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
-import '../css/app.scss';
+
+// base components
 import Routes from './Routes';
 import Layout from './Layout';
 
-function App() {
-  return (
-    <RecoilRoot>
-      <Router>
-        <Layout>
-          <Routes />
-        </Layout>
-      </Router>
-    </RecoilRoot>
-  );
-}
+// styles
+import '../css/app.scss';
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+// i18n
+import './i18n';
+
+ReactDOM.render(
+  <RecoilRoot>
+    <Router>
+      <Layout>
+        <Routes />
+      </Layout>
+    </Router>
+  </RecoilRoot>,
+  document.querySelector('#root')
+);
